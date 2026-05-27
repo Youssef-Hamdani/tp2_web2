@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= e(config('app.name', 'TP2 Web')) ?></title>
+    <title><?= e(config('app.name', 'Best Sell')) ?></title>
     <link rel="stylesheet" href="<?= e(asset_url('assets/css/app.css')) ?>">
 </head>
 <body>
 <div class="page-shell">
     <header class="site-header">
-        <a class="brand" href="<?= e(url('/')) ?>">TP2 Web</a>
+        <a class="brand" href="<?= e(url('/')) ?>">Best Sell</a>
         <nav class="site-nav" aria-label="Navigation principale">
             <a class="<?= $currentPath === '/' ? 'is-active' : '' ?>" href="<?= e(url('/')) ?>">Accueil</a>
             <?php if ($auth !== null): ?>
