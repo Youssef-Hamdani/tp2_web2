@@ -10,7 +10,7 @@
             <div><dt>Frais de service</dt><dd><?= e($pricing->formatCents($product->serviceFeeCents)) ?></dd></div>
             <div><dt>TPS</dt><dd><?= e($pricing->formatCents($summary['gst_cents'])) ?></dd></div>
             <div><dt>TVQ</dt><dd><?= e($pricing->formatCents($summary['qst_cents'])) ?></dd></div>
-            <div class="summary-total"><dt>Total a payer</dt><dd><?= e($pricing->formatCents($summary['total_cents'])) ?></dd></div>
+            <div class="summary-total"><dt>Total à payer</dt><dd><?= e($pricing->formatCents($summary['total_cents'])) ?></dd></div>
         </dl>
         <div class="card-actions">
             <?php if ($auth === null): ?>

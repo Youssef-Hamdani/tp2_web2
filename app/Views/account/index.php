@@ -8,7 +8,7 @@
 <section class="dashboard-grid dashboard-grid-single">
     <article class="panel">
         <h2>Mon compte</h2>
-        <p>Courriel: <?= e($user->email) ?></p>
+        <p>Courriel : <?= e($user->email) ?></p>
         <div class="stack-actions">
             <a class="button button-secondary" href="<?= e(url('/compte/mot-de-passe')) ?>">Modifier mon mot de passe</a>
             <a class="button button-secondary" href="<?= e(url('/compte/achats')) ?>">Voir mes achats</a>
