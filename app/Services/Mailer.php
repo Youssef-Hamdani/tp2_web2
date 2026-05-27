@@ -6,7 +6,7 @@ namespace App\Services;
 
 use App\Core\App;
 
-final class Mailer
+class Mailer
 {
     public function send(string $to, string $subject, string $textBody): void
     {
