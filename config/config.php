@@ -26,8 +26,8 @@ $config = [
         'debug_copy_to_storage' => true,
     ],
     'stripe' => [
-        'secret_key' => base64_decode('c2tfdGVzdF81MVRiU0paUmczaG1YQThKbE5wREpoRmhIT0xWUm9nNEZnaFE5R2FGa3J3c0R2MXcxM1lqZTZrUFQ3enFQSFgxbzFicnVucDk2NzVMdFQ0NnpoN3ZIOXFiRkEwMEcwRU8yNGpD'),
-        'publishable_key' => base64_decode('cGtfdGVzdF81MVRiU0paUmczaG1YQThKbGI5V2FKU2tBWlAzUHhObld2NTJnZDE4VmxadjhvZEtMWG1vQUxKR0pPYVMxMWExcWFhQlIwSnhaaGthZ3NXTlB0RGpGa1VlajAwRWRVSGp1Njk='),
+        'secret_key' => base64_decode('c2tfdGVzdF81MVRiU0paUmczaG1YQThKbHQ5NFRCWTFHcWVOd05mNHZOakhhMHRsZElHcjlHeDV0Qm55YXo5ckRmYjZlbThMQmhmTWlQZjRQRlJ4b016RXVCUVdkc0s4WjAwcUR6Q0FDQ0M='),
+        'publishable_key' => base64_decode('cGtfdGVzdF81MVRiU0paUmczaG1YQThKbExsdTZYSllrWWM4SVdubnhXTjYyNEFPZHhwSkFBc0NyYW9sbVliSWRPbkFLWWc4MG85aW55VEVVUXdyWk03M2dwY2lIMVJkSTAwc3NPVTdzNmw='),
         'webhook_secret' => '',
         'currency' => 'cad',
     ],
