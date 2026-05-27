@@ -5,13 +5,13 @@ Application MVC PHP pour un mini marche en ligne avec authentification avancee, 
 ## Mise en route
 
 1. Deployer ou copier le projet dans un dossier servi par Apache avec `mod_rewrite` active.
-2. Verifier [config/config.php](/C:/projects/tp2_web2/config/config.php:1) pour :
+2. Verifier [config/config.php](./config/config.php:1) pour :
    - `app.base_url`
    - les acces a la base de donnees
    - les cles Stripe
-3. Importer la migration [database/migrations/001_initial.sql](/C:/projects/tp2_web2/database/migrations/001_initial.sql:1) dans la base `u6269176_tp2`.
+3. Importer la migration [database/migrations/001_initial.sql](./database/migrations/001_initial.sql:1) dans la base `u6269176_tp2`.
 4. S'assurer que `uploads/products`, `storage/logs` et `storage/mail` sont accessibles en ecriture par PHP.
-5. Pointer Apache vers [index.php](/C:/projects/tp2_web2/index.php:1) avec les beaux URLs actives via `.htaccess`.
+5. Pointer Apache vers [index.php](./index.php:1) avec les beaux URLs actives via `.htaccess`.
 
 ## Comptes de demonstration
 
@@ -45,9 +45,9 @@ Le flux utilise Stripe Checkout :
 
 ## Tests
 
-- Tests unitaires : [tests/run.php](/C:/projects/tp2_web2/tests/run.php:1)
-- Gherkin : [tests/acceptance/achat_reussi.feature](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.feature:1)
-- Scenario PHP : [tests/acceptance/achat_reussi.php](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.php:1)
+- Tests unitaires : [tests/run.php](./tests/run.php:1)
+- Gherkin : [tests/acceptance/achat_reussi.feature](./tests/acceptance/achat_reussi.feature:1)
+- Scenario PHP : [tests/acceptance/achat_reussi.php](./tests/acceptance/achat_reussi.php:1)
 
 Le depot inclut 5 tests unitaires, dont un test avec simulacre manuel dans `AuthServiceTest`.
 
