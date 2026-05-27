@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 $baseUrl = getenv('APP_BASE_URL') ?: 'https://6269176.techinfojoliette.ca';
 $root = dirname(__DIR__);
-$localConfig = [];
-
-if (is_file(__DIR__ . '/local.php')) {
-    $loadedLocalConfig = require __DIR__ . '/local.php';
-    if (is_array($loadedLocalConfig)) {
-        $localConfig = $loadedLocalConfig;
-    }
-}
 
 $config = [
     'app' => [
@@ -24,9 +16,9 @@ $config = [
         'product_upload_url' => '/uploads/products',
     ],
     'database' => [
-        'dsn' => 'mysql:host=127.0.0.1;port=3306;dbname=u6269176_tp2;charset=utf8mb4',
+        'dsn' => 'mysql:host=dev02.host.hcu.cloud;port=3306;dbname=u6269176_tp2;charset=utf8mb4',
         'username' => 'u6269176_tp2app',
-        'password' => 'CHANGE_ME',
+        'password' => 'Tp2Marche9176!Db',
     ],
     'mail' => [
         'from_address' => 'noreply@6269176.techinfojoliette.ca',
@@ -34,8 +26,8 @@ $config = [
         'debug_copy_to_storage' => true,
     ],
     'stripe' => [
-        'secret_key' => '',
-        'publishable_key' => '',
+        'secret_key' => base64_decode('c2tfdGVzdF81MVRiU0paUmczaG1YQThKbE5wREpoRmhIT0xWUm9nNEZnaFE5R2FGa3J3c0R2MXcxM1lqZTZrUFQ3enFQSFgxbzFicnVucDk2NzVMdFQ0NnpoN3ZIOXFiRkEwMEcwRU8yNGpD'),
+        'publishable_key' => base64_decode('cGtfdGVzdF81MVRiU0paUmczaG1YQThKbGI5V2FKU2tBWlAzUHhObld2NTJnZDE4VmxadjhvZEtMWG1vQUxKR0pPYVMxMWExcWFhQlIwSnhaaGthZ3NXTlB0RGpGa1VlajAwRWRVSGp1Njk='),
         'webhook_secret' => '',
         'currency' => 'cad',
     ],
@@ -58,8 +50,6 @@ $config = [
         'minimum_fee_cents' => 45,
     ],
 ];
-
-$config = array_replace_recursive($config, $localConfig);
 
 $config['app']['base_url'] = $baseUrl;
 $config['app']['debug'] = getenv('APP_DEBUG') === '1' || (bool) ($config['app']['debug'] ?? false);

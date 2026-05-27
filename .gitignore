@@ -7,7 +7,6 @@
 !/storage/mail/.gitkeep
 /uploads/products/*
 !/uploads/products/.gitkeep
-/config/local.php
 /.tmp_bcrypt/
 /.tmp_pymysql/
 /.idea/
