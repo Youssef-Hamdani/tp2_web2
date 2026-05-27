@@ -15,7 +15,13 @@ final class Request
     {
         $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 
-        return $uri === null || $uri === '' ? '/' : rtrim($uri, '/') ?: '/';
+        if ($uri === null || $uri === '') {
+            return '/';
+        }
+
+        $trimmed = rtrim($uri, '/');
+
+        return $trimmed !== '' ? $trimmed : '/';
     }
 
     public function input(string $key, mixed $default = null): mixed
