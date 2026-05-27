@@ -1,0 +1,10 @@
+.git
+class
+dbdata
+node_modules
+vendor
+storage/logs
+storage/mail
+uploads/products
+.tmp_bcrypt
+.tmp_pymysql

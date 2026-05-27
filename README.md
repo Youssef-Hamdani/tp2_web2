@@ -2,16 +2,43 @@
 
 Application MVC PHP pour un mini marche en ligne avec authentification avancee, televersement d'images, panier a un seul produit, calcul des taxes du Quebec et paiement Stripe Checkout.
 
-## Mise en route
+## Mise en route en Docker
+
+Prerequis :
+- Docker Desktop
+- le port `8080` disponible
+
+Etapes :
+1. Dans la racine du projet, lancer `docker compose up -d --build`.
+2. Attendre que les conteneurs `app` et `db` soient en etat `healthy` ou `running`.
+3. Ouvrir [http://localhost:8080](http://localhost:8080).
+
+Note :
+- le premier build Docker peut prendre quelques minutes
+- la base locale est creee et remplie automatiquement au premier demarrage
+
+Ce que fait la configuration Docker :
+- lance Apache + PHP 8.3 avec `pdo_mysql`, `gd` et `mod_rewrite`
+- lance MariaDB localement
+- importe automatiquement [database/migrations/001_initial.sql](/C:/projects/tp2_web2/database/migrations/001_initial.sql:1) au premier demarrage de la base
+- force l'application a utiliser la base Docker locale via des variables d'environnement
+
+Commandes utiles :
+- arreter : `docker compose down`
+- reinitialiser completement la base locale : `docker compose down -v` puis `docker compose up -d --build`
+- voir les logs : `docker compose logs -f`
+- lancer les tests unitaires : `docker compose exec app php tests/run.php`
+
+## Mise en route sans Docker
 
 1. Deployer ou copier le projet dans un dossier servi par Apache avec `mod_rewrite` active.
-2. Verifier [config/config.php](./config/config.php:1) pour :
+2. Verifier [config/config.php](/C:/projects/tp2_web2/config/config.php:1) pour :
    - `app.base_url`
    - les acces a la base de donnees
    - les cles Stripe
-3. Importer la migration [database/migrations/001_initial.sql](./database/migrations/001_initial.sql:1) dans la base `u6269176_tp2`.
+3. Importer la migration [database/migrations/001_initial.sql](/C:/projects/tp2_web2/database/migrations/001_initial.sql:1) dans la base `u6269176_tp2`.
 4. S'assurer que `uploads/products`, `storage/logs` et `storage/mail` sont accessibles en ecriture par PHP.
-5. Pointer Apache vers [index.php](./index.php:1) avec les beaux URLs actives via `.htaccess`.
+5. Pointer Apache vers [index.php](/C:/projects/tp2_web2/index.php:1) avec les beaux URLs actives via [.htaccess](/C:/projects/tp2_web2/.htaccess:1).
 
 ## Comptes de demonstration
 
@@ -43,13 +70,15 @@ Le flux utilise Stripe Checkout :
 - la carte est saisie sur la page Stripe
 - au retour, l'application verifie le statut reel de la session Stripe avant de marquer la commande payee
 
+En Docker local, les cles Stripe sont laissees vides par defaut dans `docker-compose.yml`. Le site fonctionne quand meme pour le reste, mais le paiement reel n'est pas active tant que les variables Stripe ne sont pas remplies.
+
 ## Tests
 
-- Tests unitaires : [tests/run.php](./tests/run.php:1)
-- Gherkin : [tests/acceptance/achat_reussi.feature](./tests/acceptance/achat_reussi.feature:1)
-- Scenario PHP : [tests/acceptance/achat_reussi.php](./tests/acceptance/achat_reussi.php:1)
+- Tests unitaires : [tests/run.php](/C:/projects/tp2_web2/tests/run.php:1)
+- Gherkin : [tests/acceptance/achat_reussi.feature](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.feature:1)
+- Scenario PHP : [tests/acceptance/achat_reussi.php](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.php:1)
 
-Le depot inclut 5 tests unitaires, dont un test avec simulacre manuel dans `AuthServiceTest`.
+Le depot inclut 6 tests unitaires qui passent dans Docker avec `php tests/run.php`.
 
 ## Auto-evaluation
 
@@ -79,9 +108,9 @@ Sous-total fonctionnalites : **70 / 70**
 | Securite, autres | 20 | HTTPS, cookies de session, ACL, CSP, upload valide, requetes preparees, mais je reste conservateur | 12 |
 | Normes de programmation | 5 | Code globalement uniforme, mais quelques textes/encodages pourraient etre plus propres | 3 |
 | Apparence (ergonomie, reactivite et accessibilite) | 10 | Interface fonctionnelle et responsive, mais visuellement simple et perfectible | 7 |
-| Tests (5.5) | 10 | Exigence minimale atteinte, mais couverture encore limitee | 6 |
+| Tests (5.5) | 10 | Exigence minimale atteinte et tests executes en Docker, mais couverture encore limitee | 6 |
 | Redimensionnement des images (5.6) | 5 | Fait | 5 |
-| Fichiers | 5 | Migration, README et depot propres | 5 |
+| Fichiers | 5 | Migration, README, Docker et depot propres | 5 |
 
 Sous-total code : **90 / 115**
 
@@ -105,6 +134,6 @@ Si la video est fournie correctement, le total estime devient **175 / 200**.
 
 ## Notes
 
-- Le site est deployee sur cPanel et testable en ligne.
+- Le site est deploye sur cPanel et testable en ligne.
 - Le paiement Stripe a ete verifie en mode test.
 - L'interface est en francais, mais quelques accents/termes restent a polir pour maximiser la presentation.

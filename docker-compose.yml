@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    environment:
+      APP_BASE_URL: http://localhost:8080
+      APP_DEBUG: "1"
+      DB_DSN: mysql:host=db;port=3306;dbname=u6269176_tp2;charset=utf8mb4
+      DB_USERNAME: tp2_user
+      DB_PASSWORD: tp2_password
+      STRIPE_SECRET_KEY: ""
+      STRIPE_PUBLISHABLE_KEY: ""
+      STRIPE_WEBHOOK_SECRET: ""
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: u6269176_tp2
+      MARIADB_USER: tp2_user
+      MARIADB_PASSWORD: tp2_password
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./database/migrations/001_initial.sql:/docker-entrypoint-initdb.d/001_initial.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  dbdata:
+
