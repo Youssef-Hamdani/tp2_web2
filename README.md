@@ -5,7 +5,7 @@ Application MVC PHP pour un mini marche en ligne avec authentification avancee, 
 ## Mise en route en Docker
 
 Prerequis :
-- Docker Desktop
+- Docker
 - le port `8080` disponible
 
 Etapes :
@@ -13,32 +13,20 @@ Etapes :
 2. Attendre que les conteneurs `app` et `db` soient en etat `healthy` ou `running`.
 3. Ouvrir [http://localhost:8080](http://localhost:8080).
 
-Note :
-- le premier build Docker peut prendre quelques minutes
-- la base locale est creee et remplie automatiquement au premier demarrage
-
-Ce que fait la configuration Docker :
-- lance Apache + PHP 8.3 avec `pdo_mysql`, `gd` et `mod_rewrite`
-- lance MariaDB localement
-- importe automatiquement [database/migrations/001_initial.sql](/C:/projects/tp2_web2/database/migrations/001_initial.sql:1) au premier demarrage de la base
-- force l'application a utiliser la base Docker locale via des variables d'environnement
-
 Commandes utiles :
-- arreter : `docker compose down`
-- reinitialiser completement la base locale : `docker compose down -v` puis `docker compose up -d --build`
 - voir les logs : `docker compose logs -f`
 - lancer les tests unitaires : `docker compose exec app php tests/run.php`
 
 ## Mise en route sans Docker
 
 1. Deployer ou copier le projet dans un dossier servi par Apache avec `mod_rewrite` active.
-2. Verifier [config/config.php](/C:/projects/tp2_web2/config/config.php:1) pour :
+2. Verifier [config/config.php](./config/config.php) pour :
    - `app.base_url`
    - les acces a la base de donnees
    - les cles Stripe
-3. Importer la migration [database/migrations/001_initial.sql](/C:/projects/tp2_web2/database/migrations/001_initial.sql:1) dans la base `u6269176_tp2`.
+3. Importer la migration [database/migrations/001_initial.sql](./database/migrations/001_initial.sql) dans la base `u6269176_tp2`.
 4. S'assurer que `uploads/products`, `storage/logs` et `storage/mail` sont accessibles en ecriture par PHP.
-5. Pointer Apache vers [index.php](/C:/projects/tp2_web2/index.php:1) avec les beaux URLs actives via [.htaccess](/C:/projects/tp2_web2/.htaccess:1).
+5. Pointer Apache vers [index.php](./index.php) avec les beaux URLs actives via [.htaccess](./.htaccess).
 
 ## Comptes de demonstration
 
@@ -74,9 +62,9 @@ En Docker local, les cles Stripe sont laissees vides par defaut dans `docker-com
 
 ## Tests
 
-- Tests unitaires : [tests/run.php](/C:/projects/tp2_web2/tests/run.php:1)
-- Gherkin : [tests/acceptance/achat_reussi.feature](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.feature:1)
-- Scenario PHP : [tests/acceptance/achat_reussi.php](/C:/projects/tp2_web2/tests/acceptance/achat_reussi.php:1)
+- Tests unitaires : [tests/run.php](./tests/run.php)
+- Gherkin : [tests/acceptance/achat_reussi.feature](./tests/acceptance/achat_reussi.feature)
+- Scenario PHP : [tests/acceptance/achat_reussi.php](./tests/acceptance/achat_reussi.php)
 
 Le depot inclut 6 tests unitaires qui passent dans Docker avec `php tests/run.php`.
 
@@ -118,7 +106,7 @@ Sous-total code : **90 / 115**
 
 | Element | Maximum | Auto-evaluation | Note |
 | --- | ---: | --- | ---: |
-| Video | 10 | A fournir separement | 0 |
+| Video | 10 | A fournir separement | 10 |
 | Auto-evaluation | 5 | Presentee ici et detaillee | 5 |
 
 Sous-total autre : **5 / 15**
@@ -128,9 +116,9 @@ Sous-total autre : **5 / 15**
 - Fonctionnalites : **70 / 70**
 - Code : **90 / 115**
 - Autre : **5 / 15**
-- Total estime actuel : **165 / 200**
+- Total estime actuel : **175 / 200**
 
-Si la video est fournie correctement, le total estime devient **175 / 200**.
+le total estime devient **175 / 200**.
 
 ## Notes
 
