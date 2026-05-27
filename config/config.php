@@ -7,7 +7,7 @@ $root = dirname(__DIR__);
 
 $config = [
     'app' => [
-        'name' => 'TP2 Web',
+        'name' => 'Best Sell',
         'base_url' => $baseUrl,
         'debug' => getenv('APP_DEBUG') === '1',
         'force_https' => str_starts_with($baseUrl, 'https://'),
