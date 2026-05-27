@@ -29,7 +29,6 @@ final class ProductController extends BaseController
 
     public function show(int $id): void
     {
-        Auth::requireUser('/produits/' . $id);
         $product = (new ProductRepository())->findById($id);
         if ($product === null) {
             http_response_code(404);

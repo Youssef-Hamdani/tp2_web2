@@ -10,10 +10,14 @@
             <div><dt>Frais de service</dt><dd><?= e($pricing->formatCents($product->serviceFeeCents)) ?></dd></div>
             <div><dt>TPS</dt><dd><?= e($pricing->formatCents($summary['gst_cents'])) ?></dd></div>
             <div><dt>TVQ</dt><dd><?= e($pricing->formatCents($summary['qst_cents'])) ?></dd></div>
-            <div class="summary-total"><dt>Total à payer</dt><dd><?= e($pricing->formatCents($summary['total_cents'])) ?></dd></div>
+            <div class="summary-total"><dt>Total a payer</dt><dd><?= e($pricing->formatCents($summary['total_cents'])) ?></dd></div>
         </dl>
         <div class="card-actions">
-            <?php if ($auth !== null && $auth->id !== $product->sellerUserId && $product->isAvailable()): ?>
+            <?php if ($auth === null): ?>
+                <a class="button button-primary" href="<?= e(url('/connexion')) ?>">Se connecter pour acheter</a>
+            <?php elseif ($auth->id === $product->sellerUserId && $product->isAvailable()): ?>
+                <a class="button button-primary" href="<?= e(url('/produits/' . $product->id . '/modifier')) ?>">Modifier l'annonce</a>
+            <?php elseif ($product->isAvailable()): ?>
                 <form method="post" action="<?= e(url('/panier/ajouter/' . $product->id)) ?>">
                     <input type="hidden" name="_csrf" value="<?= e(csrf_token('cart-add-' . $product->id)) ?>">
                     <button class="button button-primary" type="submit">Ajouter au panier</button>
