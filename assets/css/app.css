@@ -343,6 +343,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.dashboard-grid-single {
+    grid-template-columns: 1fr;
+}
+
 .dashboard-products {
     display: grid;
     gap: 0.8rem;
@@ -351,11 +355,27 @@ img {
 .dashboard-product-row {
     padding: 1rem 0;
     border-top: 1px solid var(--line);
+    align-items: center;
 }
 
 .dashboard-product-row:first-child {
     border-top: 0;
     padding-top: 0;
+}
+
+.dashboard-product-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dashboard-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f3f3f3;
+    border: 1px solid var(--line);
 }
 
 .data-table {

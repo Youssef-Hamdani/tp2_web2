@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Bureau compact">
+  <rect width="1200" height="900" fill="#fef3c7"/>
+  <rect x="260" y="340" width="680" height="70" rx="12" fill="#92400e"/>
+  <rect x="320" y="410" width="42" height="300" rx="18" fill="#78350f"/>
+  <rect x="838" y="410" width="42" height="300" rx="18" fill="#78350f"/>
+  <rect x="470" y="420" width="260" height="180" rx="14" fill="#d97706"/>
+  <circle cx="600" cy="510" r="10" fill="#451a03"/>
+  <text x="110" y="140" font-size="70" font-family="Segoe UI, sans-serif" fill="#451a03">Bureau compact</text>
+</svg>

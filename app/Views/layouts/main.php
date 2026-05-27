@@ -13,6 +13,7 @@
         <nav class="site-nav" aria-label="Navigation principale">
             <a class="<?= $currentPath === '/' ? 'is-active' : '' ?>" href="<?= e(url('/')) ?>">Accueil</a>
             <?php if ($auth !== null): ?>
+                <a class="<?= $currentPath === '/vendre' || str_starts_with($currentPath, '/produits/ajouter') ? 'is-active' : '' ?>" href="<?= e(url('/vendre')) ?>">Vendre</a>
                 <a class="<?= str_starts_with($currentPath, '/compte') ? 'is-active' : '' ?>" href="<?= e(url('/compte')) ?>">Mon compte</a>
                 <a class="<?= $currentPath === '/panier' ? 'is-active' : '' ?>" href="<?= e(url('/panier')) ?>">Panier</a>
                 <form method="post" action="<?= e(url('/deconnexion')) ?>" class="inline-form">

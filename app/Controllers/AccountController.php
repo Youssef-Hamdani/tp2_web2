@@ -18,7 +18,6 @@ final class AccountController extends BaseController
         $user = Auth::requireUser('/compte');
         $this->view('account/index', [
             'user' => $user,
-            'products' => (new ProductRepository())->bySeller($user->id),
         ]);
     }
 

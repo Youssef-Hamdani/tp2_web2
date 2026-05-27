@@ -64,7 +64,7 @@ final class AuthController extends BaseController
 
         $this->request->clearOldInput();
         $this->success('Connexion réussie.');
-        $this->redirect(redirect_back_default('/compte'));
+        $this->redirect(redirect_back_default('/'));
     }
 
     public function logout(): void

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Plante verte">
+  <rect width="1200" height="900" fill="#ecfdf5"/>
+  <path d="M600 520c-40-140-10-250 80-340 40 80 30 180-20 260-18 30-36 55-60 80z" fill="#16a34a"/>
+  <path d="M600 520c40-130 120-220 240-280 10 90-30 180-100 240-44 38-90 60-140 40z" fill="#22c55e"/>
+  <path d="M600 520c-30-120-100-210-220-280-16 94 10 184 76 244 38 34 82 58 144 36z" fill="#15803d"/>
+  <rect x="500" y="540" width="200" height="170" rx="18" fill="#b45309"/>
+  <text x="110" y="140" font-size="70" font-family="Segoe UI, sans-serif" fill="#14532d">Plante verte</text>
+</svg>

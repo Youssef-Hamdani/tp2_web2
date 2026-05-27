@@ -86,14 +86,21 @@ INSERT INTO users (
 ) VALUES
     (1, 'acheteur@example.com', '$2b$12$ksx2GoNtn7WpjpMHngoI1.XSzj4I1d/a2OM/5DDyzsPMqTGtHUQbC', 'member', 1, NULL, NULL, NULL, NULL, NULL, NULL, NOW(), NOW()),
     (2, 'vendeur@example.com', '$2b$12$KtBhB3BQw5Sielg1KAdQvuOgoK6UiEPsVe8T6N73W///.wfU560b2', 'member', 1, NULL, NULL, NULL, NULL, NULL, NULL, NOW(), NOW()),
-    (3, 'membre@example.com', '$2b$12$YG86/KSLnf4C00Z9iFSOF.DNSpvSbZr832W1/dmEVhIuTL3W5iMI2', 'member', 0, SHA2('activation-seed', 256), DATE_ADD(NOW(), INTERVAL 1 HOUR), NULL, NULL, NULL, NULL, NOW(), NOW());
+    (3, 'membre@example.com', '$2b$12$YG86/KSLnf4C00Z9iFSOF.DNSpvSbZr832W1/dmEVhIuTL3W5iMI2', 'member', 0, SHA2('activation-seed', 256), DATE_ADD(NOW(), INTERVAL 1 HOUR), NULL, NULL, NULL, NULL, NOW(), NOW()),
+    (4, 'vendeuse@example.com', '$2b$12$KtBhB3BQw5Sielg1KAdQvuOgoK6UiEPsVe8T6N73W///.wfU560b2', 'member', 1, NULL, NULL, NULL, NULL, NULL, NULL, NOW(), NOW());
 
 INSERT INTO products (
     id, seller_user_id, name, description, image_path, price_cents, service_fee_cents, status, sold_at, created_at, updated_at
 ) VALUES
-    (1, 2, 'Vélo urbain bleu', 'Vélo de ville en bon état, parfait pour les trajets quotidiens.', '/assets/demo/velo.svg', 32500, 973, 'available', NULL, NOW(), NOW()),
-    (2, 3, 'Chaise vintage en bois', 'Chaise restaurée à la main, très confortable pour un bureau ou une salle à manger.', '/assets/demo/chaise.svg', 9800, 315, 'available', NULL, NOW(), NOW()),
-    (3, 2, 'Lampe artisanale', 'Lampe décorative vendue lors d’une transaction de démonstration.', '/assets/demo/lampe.svg', 15000, 465, 'sold', NOW(), NOW(), NOW());
+    (1, 2, 'Velo urbain bleu', 'Velo de ville en bon etat, parfait pour les trajets quotidiens.', '/assets/demo/velo.svg', 32500, 973, 'available', NULL, NOW(), NOW()),
+    (2, 4, 'Chaise vintage en bois', 'Chaise restauree a la main, ideale pour un bureau ou une salle a manger.', '/assets/demo/chaise.svg', 9800, 315, 'available', NULL, NOW(), NOW()),
+    (3, 2, 'Casque audio sans fil', 'Casque confortable avec bonne autonomie pour la musique et les appels.', '/assets/demo/casque.svg', 6200, 210, 'available', NULL, NOW(), NOW()),
+    (4, 4, 'Bureau compact', 'Petit bureau pratique pour une chambre, un coin etude ou le teletravail.', '/assets/demo/bureau.svg', 18900, 579, 'available', NULL, NOW(), NOW()),
+    (5, 2, 'Lot de livres', 'Selection de romans et d essais en bon etat pour lecture detente ou etudes.', '/assets/demo/livres.svg', 4500, 161, 'available', NULL, NOW(), NOW()),
+    (6, 4, 'Plante verte decorative', 'Belle plante pour salon ou bureau, deja bien entretenue.', '/assets/demo/plante.svg', 5400, 187, 'available', NULL, NOW(), NOW()),
+    (7, 2, 'Tablette numerique', 'Tablette pratique pour navigation, lecture et videos.', '/assets/demo/tablette.svg', 12900, 405, 'available', NULL, NOW(), NOW()),
+    (8, 4, 'Veste en jean', 'Veste casual en tres bon etat, style simple et passe partout.', '/assets/demo/veste.svg', 8900, 289, 'available', NULL, NOW(), NOW()),
+    (9, 2, 'Lampe artisanale', 'Lampe decorative vendue lors d une transaction de demonstration.', '/assets/demo/lampe.svg', 15000, 465, 'sold', NOW(), NOW(), NOW());
 
 INSERT INTO orders (
     id, buyer_user_id, seller_user_id, product_id, product_name,
@@ -103,13 +110,13 @@ INSERT INTO orders (
     shipping_address_line1, shipping_address_line2, shipping_city, shipping_province, shipping_postal_code,
     stripe_session_id, stripe_payment_intent_id, stripe_status, status, payment_payload, purchased_at, created_at, updated_at
 ) VALUES (
-    1, 1, 2, 3, 'Lampe artisanale',
+    1, 1, 2, 9, 'Lampe artisanale',
     15000, 465, 750, 1496, 17711,
     'Alice', 'Acheteuse',
     '123 Rue des Pins', '', 'Joliette', 'QC', 'J6E1A1',
     '123 Rue des Pins', '', 'Joliette', 'QC', 'J6E1A1',
     'cs_test_seed', 'pi_seed', 'succeeded', 'paid',
-    JSON_OBJECT('source', 'seed', 'note', 'Commande de démonstration'),
+    JSON_OBJECT('source', 'seed', 'note', 'Commande de demonstration'),
     NOW(), NOW(), NOW()
 );
 
@@ -119,7 +126,7 @@ VALUES (
     JSON_OBJECT(
         'user_id', 1,
         'order_id', 1,
-        'product_id', 3,
+        'product_id', 9,
         'checkout_session', 'cs_test_seed',
         'payment_status', 'paid',
         'payment_intent_id', 'pi_seed',

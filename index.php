@@ -39,6 +39,7 @@ $router->get('/compte/achats', [AccountController::class, 'purchases']);
 $router->get('/compte/ventes', [AccountController::class, 'sales']);
 
 $router->get('/produits', [ProductController::class, 'index']);
+$router->get('/vendre', [ProductController::class, 'manage']);
 $router->get('/produits/ajouter', [ProductController::class, 'create']);
 $router->post('/produits', [ProductController::class, 'store']);
 $router->get('/produits/{id}', [ProductController::class, 'show']);

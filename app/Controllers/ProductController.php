@@ -18,6 +18,15 @@ final class ProductController extends BaseController
         $this->redirect('/');
     }
 
+    public function manage(): void
+    {
+        $user = Auth::requireUser('/vendre');
+        $this->view('products/manage', [
+            'products' => (new ProductRepository())->bySeller($user->id),
+            'pricing' => new PricingService(),
+        ]);
+    }
+
     public function show(int $id): void
     {
         Auth::requireUser('/produits/' . $id);

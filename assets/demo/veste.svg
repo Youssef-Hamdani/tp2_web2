@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Veste en jean">
+  <rect width="1200" height="900" fill="#eff6ff"/>
+  <path d="M460 220l140 90 140-90 90 130-90 120v250H460V470l-90-120 90-130z" fill="#2563eb"/>
+  <path d="M600 310v390M510 370h70M620 370h70" stroke="#dbeafe" stroke-width="18" stroke-linecap="round"/>
+  <path d="M460 220l-70 120M740 220l70 120" stroke="#1d4ed8" stroke-width="26" stroke-linecap="round"/>
+  <text x="110" y="140" font-size="70" font-family="Segoe UI, sans-serif" fill="#1e3a8a">Veste en jean</text>
+</svg>
