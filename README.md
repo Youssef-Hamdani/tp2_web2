@@ -106,7 +106,7 @@ Sous-total code : **90 / 115**
 
 | Élément | Maximum | Auto-évaluation | Note |
 | --- | ---: | --- | ---: |
-| Vidéo | 10 | À fournir séparément | 0 |
+| Vidéo | 10 | À fournir séparément | 8 |
 | Auto-évaluation | 5 | Présentée ici et détaillée | 5 |
 
 Sous-total autre : **5 / 15**
@@ -116,9 +116,8 @@ Sous-total autre : **5 / 15**
 - Fonctionnalités : **70 / 70**
 - Code : **90 / 115**
 - Autre : **5 / 15**
-- Total estimé actuel : **165 / 200**
 
-Si la vidéo est fournie correctement, le total estimé devient **175 / 200**.
+ le total estimé devient **173 / 200**.
 
 ## Notes
 
