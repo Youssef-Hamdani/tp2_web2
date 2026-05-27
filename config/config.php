@@ -16,7 +16,7 @@ return [
         'product_upload_url' => '/uploads/products',
     ],
     'database' => [
-        'dsn' => getenv('DB_DSN') ?: 'mysql:host=6269176.techinfojoliette.ca;port=3306;dbname=u6269176_tp1;charset=utf8mb4',
+        'dsn' => getenv('DB_DSN') ?: 'mysql:host=dev02.host.hcu.cloud;port=3306;dbname=u6269176_tp1;charset=utf8mb4',
         'username' => getenv('DB_USERNAME') ?: 'u6269176_codexdb',
         'password' => getenv('DB_PASSWORD') ?: 'Tp1Codex6269176Db2026!',
     ],
