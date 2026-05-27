@@ -1,0 +1,13 @@
+/vendor/
+/node_modules/
+/dbdata/
+/storage/logs/*
+!/storage/logs/.gitkeep
+/storage/mail/*
+!/storage/mail/.gitkeep
+/uploads/products/*
+!/uploads/products/.gitkeep
+/.tmp_bcrypt/
+/.tmp_pymysql/
+/.idea/
+/.vs/

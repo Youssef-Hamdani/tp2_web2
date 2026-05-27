@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Chaise vintage">
+  <rect width="1200" height="900" fill="#efe2d7"/>
+  <path d="M430 250 C430 180 770 180 770 250 L770 470 C770 530 430 530 430 470 Z" fill="#c08457"/>
+  <rect x="470" y="500" width="260" height="110" rx="28" fill="#7c2d12"/>
+  <path d="M500 610 L440 820" stroke="#3f2d1f" stroke-width="26" stroke-linecap="round"/>
+  <path d="M700 610 L760 820" stroke="#3f2d1f" stroke-width="26" stroke-linecap="round"/>
+  <path d="M520 610 L520 830" stroke="#3f2d1f" stroke-width="26" stroke-linecap="round"/>
+  <path d="M680 610 L680 830" stroke="#3f2d1f" stroke-width="26" stroke-linecap="round"/>
+  <text x="120" y="140" font-size="72" font-family="Georgia, serif" fill="#201b15">Chaise vintage</text>
+</svg>
