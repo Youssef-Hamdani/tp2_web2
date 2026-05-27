@@ -8,7 +8,7 @@
 
 <section class="panel wide-panel">
     <?php if ($products === []): ?>
-        <p>Vous n'avez encore aucun article. Ajoutez votre premier produit pour commencer a vendre.</p>
+        <p>Vous n'avez encore aucun article. Ajoutez votre premier produit pour commencer à vendre.</p>
     <?php else: ?>
         <div class="dashboard-products">
             <?php foreach ($products as $product): ?>
@@ -29,7 +29,7 @@
                             </form>
                         </div>
                     <?php else: ?>
-                        <span class="muted">Article deja vendu</span>
+                        <span class="muted">Article déjà vendu</span>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
