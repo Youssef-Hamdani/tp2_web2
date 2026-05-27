@@ -53,7 +53,7 @@ $router->post('/panier/vider', [CartController::class, 'clear']);
 
 $router->get('/commande', [CheckoutController::class, 'show']);
 $router->post('/commande/session-stripe', [CheckoutController::class, 'createStripeSession']);
-$router->get('/commande/succes', [CheckoutController::class, 'success']);
+$router->get('/commande/succes', [CheckoutController::class, 'checkoutSuccess']);
 $router->get('/commande/annulee', [CheckoutController::class, 'cancel']);
 
 $router->dispatch();

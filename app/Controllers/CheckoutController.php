@@ -68,7 +68,7 @@ final class CheckoutController extends BaseController
         ]);
     }
 
-    public function success(): void
+    public function checkoutSuccess(): void
     {
         $user = Auth::requireUser('/commande/succes');
         $orderId = (int) $this->request->query('order_id');
